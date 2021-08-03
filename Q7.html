@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>ระบบคัดกรองผู้ป่วยภาวะโรคซึมเศร้าแบบอัตโนมัติ เพื่อสร้างแบบจำลองการเรียนรู้เชิงลึกในการช่วยคัดกรองผู้ป่วย</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles1.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <!-- Next and Previous Buttons -->
+    <style>
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+        
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+        
+        .next {
+            background-color: #c34e2e;
+            color: white;
+        }
+        
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">คำถามข้อที่ &nbsp;7.สมาธิไม่ดีเวลาทำอะไร เช่น ดูโทรทัศน์ ฟังวิทยุ หรือทำงานท่ีต้องใช้ความตั้งใจ</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">7.สมาธิไม่ดีเวลาทำอะไร เช่น ดูโทรทัศน์ ฟังวิทยุ หรือทำงานท่ีต้องใช้ความตั้งใจ</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-6">โปรดตอบคำถามของท่าน <br>(ด้วยคำตอบเหล่านี้ : ไม่เลย, มีบางวันหรือไม่บ่อย, มีค่อนข้างบ่อย, มีเกือบทุกวัน)</p>
+                    <a class="btn btn-primary btn-xl" href="#Q7">ตอบคำถาม</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Q1-->
+    <section class="page-section bg-primary" id="Q7">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">ตอบคำถามในรูปแบบบันทึกวีดีโอ</h2>
+                    <hr class="divider divider-light" />
+                    <p class="text-white-75 mb-4">โปรดอ่านทวนคำตามแล้วจึงตอบคำถาม (ตอบ ไม่เลย, มีบางวันหรือไม่บ่อย, มีค่อนข้างบ่อย, มีเกือบทุกวัน)</p>
+                    <div id="container">
+                        <video id="gum" playsinline autoplay muted></video>
+                        <video id="recorded" playsinline loop></video>
+                        <div>
+                            <button class="btn btn-light btn-xl" id="start">เปิดกล้อง</button>
+                            <button class="btn btn-light btn-xl" id="record" disabled>บันทึกวีดีโอ</button>
+                            <button class="btn btn-light btn-xl" id="play" disabled>เล่นตัวอย่าง</button>
+                            <button class="btn btn-light btn-xl" id="download" disabled>ดาวน์โหลด</button>
+                        </div>
+                        <br>
+                        <div>
+                            <p>
+                                ลดเสียงแทรก : <input type="checkbox" id="echoCancellation" />
+                            </p>
+                        </div>
+                        <a class="btn btn-light btn-xl" href="#Q77">อัปโหลดคำตอบ</a>
+                        <div>
+                            <span id="errorMsg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services-->
+    <section class="page-section" id="Q77">
+        <div class="container px-4 px-lg-5"></div>
+        <h2 class="text-center mt-0">ยืนยันคำตอบและอัพโหลดวีดีโอ</h2>
+        <hr class="divider" />
+        <center>
+            <div class="radio-container">
+                <input type="radio" id="1" name="Q7" />
+                <label for="1">ไม่เลย</label>
+
+                <input type="radio" id="2" name="Q7" />
+                <label for="2">มีบางวันหรือไม่บ่อย</label>
+
+                <input type="radio" id="3" name="Q7" />
+                <label for="3">มีค่อนข้างบ่อย</label>
+
+                <input type="radio" id="4" name="Q7" />
+                <label for="4">มีเกือบทุกวัน</label>
+            </div>
+        </center>
+        <br>
+        <div class="container">
+            <input type="file" class="form-control" id="customFile" />
+        </div>
+        <center>
+            <br>
+            <a class="btn btn-primary btn-xl" href="Q8.html">ตกลง</a>
+        </center>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div id="container">
+                <center>
+                    <a href="Q6.html" class="previous">&laquo; ข้อก่อนหน้านี้</a>
+                    <a href="Q8.html" class="next">ข้อถัดไป &raquo;</a>
+                </center>
+            </div>
+            <br>
+            <div class="small text-center text-muted">Created by Phanomkorn Homsiang </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js-Q/Q7.js"></script>
+    <script src="js/scripts1.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
